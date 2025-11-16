@@ -41,10 +41,17 @@ namespace Scripts.Player.Controls
             mouseDir = mouse.delta.ReadValue();
         }
 
-        private void LateUpdate()
+
+        private void FixedUpdate()
         {
             moveModule.CameraRotate(mouseDir);
             moveModule.MoveDir(moveDir);
         }
+
+        //private void LateUpdate()
+        //{
+        //    moveModule.CameraRotate(mouseDir);
+        //    moveModule.MoveDir(moveDir);
+        //}
     }
 }

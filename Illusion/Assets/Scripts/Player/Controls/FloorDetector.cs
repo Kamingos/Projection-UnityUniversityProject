@@ -18,6 +18,6 @@ public class FloorDetector : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawRay(new Ray(transform.position, Vector3.down * 3));
+        Gizmos.DrawRay(new Ray(transform.position, Vector3.down * rayDist));
     }
 }

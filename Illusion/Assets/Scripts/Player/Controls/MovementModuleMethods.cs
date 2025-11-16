@@ -29,10 +29,11 @@ namespace Scripts.Player.Controls
         Vector3 finalResult;
         public void MoveDir(Vector3 dir)
         {
-            localDir = transform.TransformDirection(dir) * SPEED * Time.deltaTime;
+            localDir = transform.TransformDirection(dir.normalized) * SPEED * Time.deltaTime;
 
             finalResult = transform.localPosition + localDir;
 
+            //transform.localPosition += new Vector3(0, 0, 0.1f) * SPEED * Time.deltaTime;
             rigidbody.MovePosition(finalResult);
         }
 
@@ -46,6 +47,8 @@ namespace Scripts.Player.Controls
 
         public void CameraRotate(Vector2 mouseDir)
         {
+            if (camera == null) return;
+
             // Горизонтальное вращение (игрока/родительского объекта)
             float horizontalRotation = mouseDir.x * SENSITIVE * Time.deltaTime;
             transform.Rotate(0, horizontalRotation, 0, Space.World);
