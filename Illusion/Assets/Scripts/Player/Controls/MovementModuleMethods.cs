@@ -42,7 +42,7 @@ namespace Scripts.Player.Controls
             if (!floorDetector.IsOnFloor()) return;
 
             rigidbody.AddForce(Vector3.up * JUMP_FORCE, ForceMode.Impulse);
-            Debug.Log("Jump");
+            //Debug.Log("Jump");
         }
 
         public void CameraRotate(Vector2 mouseDir)
