@@ -304,10 +304,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MovementModule
   camera: {fileID: 2453986199577744392}
   floorDetector: {fileID: 2828989754842379915}
-  SENSITIVE: 50
+  SENSITIVE: 30
   minVerticalAngle: -80
   maxVerticalAngle: 80
-  SPEED: 10
+  SPEED: 3
   JUMP_FORCE: 5
 --- !u!114 &4725693453119809308
 MonoBehaviour:
@@ -338,6 +338,7 @@ MonoBehaviour:
   camera: {fileID: 2563719172835349487}
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   secondsForUpdate: 5
+  rayDuration: 2
 --- !u!1 &4131145877301547977
 GameObject:
   m_ObjectHideFlags: 0
