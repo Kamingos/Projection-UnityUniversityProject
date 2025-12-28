@@ -46,10 +46,10 @@ MonoBehaviour:
     m_Value: 1.05
   intensity:
     m_OverrideState: 1
-    m_Value: 36.25
+    m_Value: 33.14
   scatter:
     m_OverrideState: 1
-    m_Value: 0.731
+    m_Value: 0.25
   clamp:
     m_OverrideState: 1
     m_Value: 1
@@ -74,7 +74,7 @@ MonoBehaviour:
     dimension: 1
   dirtIntensity:
     m_OverrideState: 1
-    m_Value: 20
+    m_Value: -0
 --- !u!114 &-3357603926938260329
 MonoBehaviour:
   m_ObjectHideFlags: 3

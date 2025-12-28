@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DialogItemSOList
   m_EditorClassIdentifier: Assembly-CSharp::DialogItemSOList
   DialogsItemSOList:
-  - {fileID: 11400000, guid: 2680e75525a820b4495d5a61f6b200f5, type: 2}
-  - {fileID: 11400000, guid: d20eb6d389349b249958b1c63272014f, type: 2}
-  - {fileID: 11400000, guid: 33a14c869c3e6ce459e47eefc160224f, type: 2}
+  - {fileID: 11400000, guid: 3e622d18a8db66f4aa650da5fab86232, type: 2}
+  - {fileID: 11400000, guid: 4590dbd86d23cab4090b9cea51118000, type: 2}
+  - {fileID: 11400000, guid: 77f5a390a41d4d04796525e2c1e2524e, type: 2}
+  - {fileID: 11400000, guid: be2f3c3974b1c9941a7f7ac3e42d922f, type: 2}

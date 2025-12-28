@@ -1,57 +1,54 @@
-using Scripts.Player.Controls;
+using System;
+using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Scripts.Player.Controls
 {
-    [RequireComponent(typeof(MovementModuleMethods))]
     public class PlayerInputController : MonoBehaviour
     {
-        [SerializeField] private MovementModuleMethods moveModule;
         [SerializeField] private InputActionAsset inputActions;
 
-        private Mouse mouse;
+        public event Action<InputAction.CallbackContext> OnMouseClick;
+        public event Action<InputAction.CallbackContext> OnJumpPressed;
 
-        private InputAction vertMoveAction;
-        private InputAction jumpAction;
+        private Vector2 _tempMoveDir = new Vector3(0,0,0);
+        private Vector3 _moveDir = new Vector3(0,0,0);
+        private Vector2 _mouseDir = new Vector3(0,0,0);
+        public Vector3 MoveDir => _moveDir;
+        public Vector3 MouseDir => _mouseDir;
 
-        private Vector2 tempMoveDir = new Vector3(0,0,0);
-        private Vector3 moveDir = new Vector3(0,0,0);
-        private Vector2 mouseDir = new Vector3(0,0,0);
+
+        private Mouse _mouse;
+
+        private InputAction _vertMoveAction;
+        private InputAction _jumpAction;
+
+        private InputAction _btnClick;
 
         private void Awake()
         {
-            vertMoveAction = inputActions.FindAction("Move");
-            jumpAction = inputActions.FindAction("Jump");
+            _vertMoveAction = inputActions.FindAction("Move");
+            _jumpAction = inputActions.FindAction("Jump");
+            _btnClick = inputActions.FindAction("Attack");
 
-            mouse = Mouse.current;
+            _mouse = Mouse.current;
 
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
 
-            jumpAction.performed += (_) => moveModule.Jump();
+            _btnClick.started += (_) => OnMouseClick.Invoke(_);
+
+            _jumpAction.performed += (_) => OnJumpPressed.Invoke(_);
         }
 
         private void Update()
         {
-            tempMoveDir = vertMoveAction.ReadValue<Vector2>();
+            _tempMoveDir = _vertMoveAction.ReadValue<Vector2>();
 
-            moveDir = new Vector3(tempMoveDir.x, 0, tempMoveDir.y);
+            _moveDir = new Vector3(_tempMoveDir.x, 0, _tempMoveDir.y);
 
-            mouseDir = mouse.delta.ReadValue();
+            _mouseDir = _mouse.delta.ReadValue();
         }
-
-
-        private void FixedUpdate()
-        {
-            moveModule.CameraRotate(mouseDir);
-            moveModule.MoveDir(moveDir);
-        }
-
-        //private void LateUpdate()
-        //{
-        //    moveModule.CameraRotate(mouseDir);
-        //    moveModule.MoveDir(moveDir);
-        //}
     }
 }

@@ -46,10 +46,10 @@ MonoBehaviour:
     m_Value: 1.31
   intensity:
     m_OverrideState: 1
-    m_Value: 44
+    m_Value: 7.34
   scatter:
     m_OverrideState: 1
-    m_Value: 0.107
+    m_Value: 0.127
   clamp:
     m_OverrideState: 1
     m_Value: 0.6
@@ -246,10 +246,10 @@ MonoBehaviour:
   active: 1
   widthPixelation:
     m_OverrideState: 1
-    m_Value: 460.8
+    m_Value: 720
   heightPixelation:
     m_OverrideState: 1
-    m_Value: 307.2
+    m_Value: 480
   colorPrecision:
     m_OverrideState: 1
-    m_Value: 14.56
+    m_Value: 8.23

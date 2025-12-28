@@ -6,9 +6,10 @@ namespace Scripts.Player.Controls
     [RequireComponent(typeof(Rigidbody))]
     public class MovementModuleMethods : MonoBehaviour
     {
+        [SerializeField] private PlayerInputController inputController;
+
         [SerializeField] private GameObject camera;
         [SerializeField] private FloorDetector floorDetector;
-
 
         [SerializeField] private int SENSITIVE;
 
@@ -23,6 +24,14 @@ namespace Scripts.Player.Controls
         private void Awake()
         {
             rigidbody = GetComponent<Rigidbody>();
+
+            inputController.OnJumpPressed += (_) => Jump();
+        }
+
+        private void FixedUpdate()
+        {
+            CameraRotate(inputController.MouseDir);
+            MoveDir(inputController.MoveDir);
         }
 
         Vector3 localDir;
@@ -39,7 +48,7 @@ namespace Scripts.Player.Controls
 
         public void Jump()
         {
-            if (!floorDetector.IsOnFloor()) return;
+            if (!floorDetector.IsOnFloor) return;
 
             rigidbody.AddForce(Vector3.up * JUMP_FORCE, ForceMode.Impulse);
             //Debug.Log("Jump");
