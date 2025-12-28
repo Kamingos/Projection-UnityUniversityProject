@@ -789,7 +789,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 296.7, y: -66.6}
+  m_AnchoredPosition: {x: 296.7, y: -66.600006}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9154983438168800116
@@ -960,7 +960,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.03
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 67
   orthographic: 0

@@ -66,6 +66,16 @@ namespace GeneralSctipts
                 animationExposureTime                                       // Длительность
             );
 
+            if (!isFadingOut)
+            {
+                DOTween.To(
+                    () => _pixelation.colorPrecision.value,                 // Геттер
+                    x => _pixelation.colorPrecision.Override(x),            // Сеттер с Override
+                    100,                                                    // Конечное значение
+                    animationTime                                           // Длительность
+                );
+            }
+
             if (isFadingOut)
             {
                 yield return new WaitUntil(() => _pixelation.widthPixelation.value <= endValue.x);

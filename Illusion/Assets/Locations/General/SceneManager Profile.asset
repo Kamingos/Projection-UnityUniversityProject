@@ -59,7 +59,7 @@ MonoBehaviour:
   active: 1
   widthPixelation:
     m_OverrideState: 1
-    m_Value: 412.75
+    m_Value: 720
   heightPixelation:
     m_OverrideState: 1
     m_Value: 512
