@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using GeneralSctipts;
 using UnityEngine.SceneManagement;
+using Scripts.SoundManager;
 
 namespace MenuScripts
 {
@@ -23,6 +24,9 @@ namespace MenuScripts
         [SerializeField] private CinemachineCamera diagonalCamera;
         [SerializeField] private CinemachineCamera frontCamera;
         [SerializeField] private CinemachineCamera leftCamera;
+
+        // Sound Click Volume
+        [SerializeField, Range(0f,1f)] private float clickVolume = 0.3f;
 
         // Front
         [SerializeField] private Button playBtn;
@@ -44,6 +48,8 @@ namespace MenuScripts
         {
             playBtn.onClick.AddListener(() =>
             {
+                SoundManager.Play(Sound.MenuTVSound, volume: clickVolume);
+
                 switch (CurrentState)
                 {
                     case CameraState.Diagonal:
@@ -57,6 +63,8 @@ namespace MenuScripts
 
             continueBtn.onClick.AddListener(() =>
             {
+                SoundManager.Play(Sound.MenuTVSound, volume: clickVolume);
+
                 switch (CurrentState)
                 {
                     case CameraState.Diagonal:
@@ -70,10 +78,12 @@ namespace MenuScripts
 
             settingsBtn.onClick.AddListener(() =>
             {
+                SoundManager.Play(Sound.MenuTVSound, volume: clickVolume);
+
                 switch (CurrentState)
                 {
                     case CameraState.Diagonal:
-                        ChangeCurrentState(CameraState.Left);
+                        ChangeCurrentState(CameraState.Front);
                         break;
                     case CameraState.Front:
                         ChangeCurrentState(CameraState.Left);
@@ -83,6 +93,8 @@ namespace MenuScripts
 
             quitBtn.onClick.AddListener(() =>
             {
+                SoundManager.Play(Sound.MenuTVSound, volume: clickVolume);
+
                 switch (CurrentState)
                 {
                     case CameraState.Diagonal:
@@ -96,6 +108,8 @@ namespace MenuScripts
 
             backBtn.onClick.AddListener(() =>
             {
+                SoundManager.Play(Sound.MenuTVSound, volume: clickVolume);
+
                 switch (CurrentState)
                 {
                     case CameraState.Diagonal:

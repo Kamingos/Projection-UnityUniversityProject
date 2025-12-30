@@ -10,9 +10,16 @@ namespace GeneralSctipts
 {
     public class SceneTransitionAnimation : MonoBehaviour
     {
-        [SerializeField] private float animationFadeOutTime;
-        [SerializeField] private float animationFadeInTime;
-        [SerializeField] private Vector2 endValue;
+        [Header("FadeOut")]
+        [SerializeField] private float animationPixelizationFadeOutTime;
+        [SerializeField] private float animationPostExposureFadeOutTime;
+
+        [Header("FadeIn")]
+        [SerializeField] private Vector2 pixelizationEndValue;
+        [SerializeField] private float postExposureEndValue;
+
+        [SerializeField] private float animationPixelizationFadeInTime;
+        [SerializeField] private float animationPostExposureFadeInTime;
 
         [SerializeField] private Volume volume;
 
@@ -29,21 +36,18 @@ namespace GeneralSctipts
 
             if (_pixelation == null) Debug.Log("Не удалось взять Pixelation!");
             if (_colorAdjustments == null) Debug.Log("Не удалось взять ColorAdjustments!");
-
-            _constPixelizationWidth = _pixelation.widthPixelation.value;
-            _constPixelizationHeight = _pixelation.heightPixelation.value;
         }
 
         public IEnumerator PlayAnimation(bool isFadingOut)
         {
-            float animationTime = (isFadingOut) ? animationFadeOutTime : animationFadeInTime;
+            float animationTime = (isFadingOut) ? animationPixelizationFadeOutTime : animationPixelizationFadeInTime;
 
-            float widthTo = (isFadingOut) ? endValue.x : _constPixelizationWidth;
-            float heightTo = (isFadingOut) ? endValue.y : _constPixelizationHeight;
+            float widthTo = (isFadingOut) ? 0 : pixelizationEndValue.x;
+            float heightTo = (isFadingOut) ? 0 : pixelizationEndValue.y;
 
-            float postExposureTo = (isFadingOut) ? -2.5f : 0;
+            float postExposureTo = (isFadingOut) ? postExposureEndValue : 0;
 
-            float animationExposureTime = animationTime + ((isFadingOut) ? 0.5f : (-animationTime+0.5f));
+            float animationExposureTime = (isFadingOut) ? animationPostExposureFadeOutTime : animationPostExposureFadeInTime;
 
             DOTween.To(
                 () => _pixelation.widthPixelation.value,                    // Геттер
@@ -78,8 +82,8 @@ namespace GeneralSctipts
 
             if (isFadingOut)
             {
-                yield return new WaitUntil(() => _pixelation.widthPixelation.value <= endValue.x);
-                yield return new WaitUntil(() => _pixelation.heightPixelation.value <= endValue.y);
+                yield return new WaitUntil(() => _pixelation.widthPixelation.value <= 2);
+                yield return new WaitUntil(() => _pixelation.heightPixelation.value <= 2);
                 yield return new WaitUntil(() => _colorAdjustments.postExposure.value <= postExposureTo);
             }
         }

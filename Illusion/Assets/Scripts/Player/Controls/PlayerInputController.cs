@@ -37,9 +37,9 @@ namespace Scripts.Player.Controls
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
 
-            _btnClick.started += (_) => OnMouseClick.Invoke(_);
+            _btnClick.started += (_) => OnMouseClick?.Invoke(_);
 
-            _jumpAction.performed += (_) => OnJumpPressed.Invoke(_);
+            _jumpAction.performed += (_) => OnJumpPressed?.Invoke(_);
         }
 
         private void Update()

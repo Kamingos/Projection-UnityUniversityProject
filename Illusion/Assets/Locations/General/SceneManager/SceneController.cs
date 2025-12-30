@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Scripts.SoundManager;
 
 namespace GeneralSctipts
 {
@@ -48,6 +49,7 @@ namespace GeneralSctipts
             }
 
             handler.allowSceneActivation = true;
+            SoundManager.Stop(Scripts.SoundManager.AudioType.Music);
 
             yield return _instance.transitionAnimation.PlayAnimation(false);
         }

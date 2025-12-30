@@ -1,3 +1,4 @@
+using Scripts;
 using System.Collections;
 using UnityEngine;
 
@@ -5,8 +6,14 @@ public class FloorDetector : MonoBehaviour
 {
     [SerializeField] private float rayDist;
 
-    private bool isOnFloor = false;
-    public bool IsOnFloor => isOnFloor;
+
+    private bool _isOnFloor = false;
+    public bool IsOnFloor => _isOnFloor;
+
+
+    private FloorType _floorType;
+    public FloorType FloorType => _floorType;
+
 
     private void Awake()
     {
@@ -19,7 +26,7 @@ public class FloorDetector : MonoBehaviour
 
         while (true)
         {
-            isOnFloor = IsOnFloorMethod();
+            _isOnFloor = IsOnFloorMethod();
 
             yield return wfs;
         }
@@ -30,8 +37,13 @@ public class FloorDetector : MonoBehaviour
     {
         Ray ray = new Ray(transform.position, Vector3.down * 3);
 
-        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, rayDist, LayerMask.GetMask("Default"), QueryTriggerInteraction.Ignore))
+        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, rayDist, 1, QueryTriggerInteraction.Ignore))
         {
+            if (hit.collider.TryGetComponent<FloorTypeModule>(out FloorTypeModule item))
+            {
+                _floorType = item.Type;
+            }
+            
             return true;
         }
 

@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 121075151}
   - component: {fileID: 121075150}
   - component: {fileID: 121075149}
+  - component: {fileID: 121075153}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -206,6 +207,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &121075151
 MeshFilter:
@@ -230,6 +232,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &121075153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121075148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a17ebe48ecdaf4ea9387fc951fe5fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Scripts.FloorTypeModule
+  type: 1
 --- !u!1 &127980557
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +348,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &127980561
 MeshFilter:
@@ -350,10 +366,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1597836135484443098, guid: ab388d8fd5e89e44684020d75b9cf9e2, type: 3}
-      propertyPath: JUMP_FORCE
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 3896830939011277757, guid: ab388d8fd5e89e44684020d75b9cf9e2, type: 3}
       propertyPath: m_Name
       value: Player
@@ -506,6 +518,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &357617487
 MeshFilter:
@@ -679,6 +692,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &551000004
 MeshFilter:
@@ -791,6 +805,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &568783085
 MeshFilter:
@@ -812,6 +827,7 @@ GameObject:
   - component: {fileID: 589283252}
   - component: {fileID: 589283251}
   - component: {fileID: 589283250}
+  - component: {fileID: 589283254}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -887,6 +903,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &589283252
 MeshFilter:
@@ -911,6 +928,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &589283254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589283249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a17ebe48ecdaf4ea9387fc951fe5fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Scripts.FloorTypeModule
+  type: 1
 --- !u!1 &998800239
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,6 +953,7 @@ GameObject:
   - component: {fileID: 998800242}
   - component: {fileID: 998800241}
   - component: {fileID: 998800240}
+  - component: {fileID: 998800244}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -998,6 +1029,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &998800242
 MeshFilter:
@@ -1022,6 +1054,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &998800244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998800239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a17ebe48ecdaf4ea9387fc951fe5fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Scripts.FloorTypeModule
+  type: 1
 --- !u!1 &1132677412
 GameObject:
   m_ObjectHideFlags: 0
@@ -1125,6 +1170,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1132677416
 MeshFilter:
@@ -1222,6 +1268,7 @@ GameObject:
   - component: {fileID: 1354923614}
   - component: {fileID: 1354923613}
   - component: {fileID: 1354923612}
+  - component: {fileID: 1354923616}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -1297,6 +1344,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1354923614
 MeshFilter:
@@ -1321,6 +1369,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1354923616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354923611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a17ebe48ecdaf4ea9387fc951fe5fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Scripts.FloorTypeModule
+  type: 1
 --- !u!1 &1441353954
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,6 +1394,7 @@ GameObject:
   - component: {fileID: 1441353957}
   - component: {fileID: 1441353956}
   - component: {fileID: 1441353955}
+  - component: {fileID: 1441353959}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -1408,6 +1470,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1441353957
 MeshFilter:
@@ -1432,6 +1495,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1441353959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441353954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a17ebe48ecdaf4ea9387fc951fe5fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Scripts.FloorTypeModule
+  type: 1
 --- !u!1 &1498135312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1535,6 +1611,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1498135316
 MeshFilter:
@@ -1647,6 +1724,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1653545914
 MeshFilter:
@@ -1759,6 +1837,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1745694322
 MeshFilter:
@@ -1780,6 +1859,7 @@ GameObject:
   - component: {fileID: 1802740086}
   - component: {fileID: 1802740085}
   - component: {fileID: 1802740087}
+  - component: {fileID: 1802740088}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -1884,6 +1964,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &1802740088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802740083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a17ebe48ecdaf4ea9387fc951fe5fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Scripts.FloorTypeModule
+  type: 2
 --- !u!1 &1814653704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,6 +2080,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1814653708
 MeshFilter:
@@ -2099,6 +2193,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1883870257
 MeshFilter:
@@ -2211,6 +2306,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1899412031
 MeshFilter:
@@ -2323,6 +2419,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &2130377282
 MeshFilter:
