@@ -5,6 +5,7 @@ namespace Scripts.SoundManager
     /// </summary>
     public enum Sound
     {
+        Nothing,
         WoodFootStep,
         ConcreteFootStep,
         GrassFootStep,
@@ -12,6 +13,9 @@ namespace Scripts.SoundManager
         MenuTVSound,
         PrologueMusic,
         HubMusic,
-        Level1Music
+        Level1Music,
+        BasicJump,
+        ClosedDoor,
+        OpenDoor
     }
 }

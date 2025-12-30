@@ -3438,13 +3438,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c266fb578da0949b57c125ceaff758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Scripts.InteractableObjects.Realizations.PlayAnimInteractable
-  _animator: {fileID: 238678030}
-  AnimationName: ActionAnim
-  AnimationBackName: ActionAnimBack
+  animator: {fileID: 238678030}
+  sound: 11
+  animationName: ActionAnim
+  animationBackName: ActionAnimBack
   isPingPong: 1
-  IsFadeAnimation: 1
-  AnimationSpeedVariableName: Direction
-  Duration: 0.5
+  isFadeAnimation: 1
+  animationSpeedVariableName: Direction
+  duration: 0.1
 --- !u!43 &259208347
 Mesh:
   m_ObjectHideFlags: 0
@@ -20786,6 +20787,14 @@ PrefabInstance:
     - target: {fileID: 5630610448070470419, guid: ab388d8fd5e89e44684020d75b9cf9e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879251882922498425, guid: ab388d8fd5e89e44684020d75b9cf9e2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818396870409034640, guid: ab388d8fd5e89e44684020d75b9cf9e2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 20.68
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -92663,13 +92672,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c266fb578da0949b57c125ceaff758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Scripts.InteractableObjects.Realizations.PlayAnimInteractable
-  _animator: {fileID: 697811001}
-  AnimationName: ActionAnim
-  AnimationBackName: ActionAnimBack
+  animator: {fileID: 697811001}
+  sound: 11
+  animationName: ActionAnim
+  animationBackName: ActionAnimBack
   isPingPong: 1
-  IsFadeAnimation: 1
-  AnimationSpeedVariableName: Direction
-  Duration: 0.5
+  isFadeAnimation: 1
+  animationSpeedVariableName: Direction
+  duration: 0.1
 --- !u!1 &713599950
 GameObject:
   m_ObjectHideFlags: 0
@@ -95590,13 +95600,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c266fb578da0949b57c125ceaff758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Scripts.InteractableObjects.Realizations.PlayAnimInteractable
-  _animator: {fileID: 882039735}
-  AnimationName: closedDoor
-  AnimationBackName: closedDoorBack
+  animator: {fileID: 882039735}
+  sound: 10
+  animationName: ClosedDoor
+  animationBackName: ClosedDoorBack
   isPingPong: 1
-  IsFadeAnimation: 0
-  AnimationSpeedVariableName: Direction
-  Duration: 0
+  isFadeAnimation: 1
+  animationSpeedVariableName: Direction
+  duration: 0.1
 --- !u!1 &887605351
 GameObject:
   m_ObjectHideFlags: 0
@@ -294774,13 +294785,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c266fb578da0949b57c125ceaff758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Scripts.InteractableObjects.Realizations.PlayAnimInteractable
-  _animator: {fileID: 1244678503}
-  AnimationName: closedDoor
-  AnimationBackName: closedDoorBack
+  animator: {fileID: 1244678503}
+  sound: 10
+  animationName: ClosedDoor
+  animationBackName: ClosedDoorBack
   isPingPong: 1
-  IsFadeAnimation: 0
-  AnimationSpeedVariableName: Direction
-  Duration: 0
+  isFadeAnimation: 1
+  animationSpeedVariableName: Direction
+  duration: 0.1
 --- !u!1 &1249384561
 GameObject:
   m_ObjectHideFlags: 0
@@ -337228,13 +337240,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c266fb578da0949b57c125ceaff758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Scripts.InteractableObjects.Realizations.PlayAnimInteractable
-  _animator: {fileID: 1539188770}
-  AnimationName: closedDoor
-  AnimationBackName: closedDoorBack
+  animator: {fileID: 1539188770}
+  sound: 10
+  animationName: ClosedDoor
+  animationBackName: ClosedDoorBack
   isPingPong: 1
-  IsFadeAnimation: 0
-  AnimationSpeedVariableName: Direction
-  Duration: 0
+  isFadeAnimation: 1
+  animationSpeedVariableName: Direction
+  duration: 0.1
 --- !u!1 &1547759474
 GameObject:
   m_ObjectHideFlags: 0
@@ -413304,13 +413317,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c266fb578da0949b57c125ceaff758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Scripts.InteractableObjects.Realizations.PlayAnimInteractable
-  _animator: {fileID: 2024822915}
-  AnimationName: closedDoor
-  AnimationBackName: closedDoorBack
+  animator: {fileID: 2024822915}
+  sound: 10
+  animationName: ClosedDoor
+  animationBackName: ClosedDoorBack
   isPingPong: 1
-  IsFadeAnimation: 0
-  AnimationSpeedVariableName: Direction
-  Duration: 0
+  isFadeAnimation: 1
+  animationSpeedVariableName: Direction
+  duration: 0.1
 --- !u!43 &2047895104
 Mesh:
   m_ObjectHideFlags: 0

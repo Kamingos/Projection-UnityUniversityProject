@@ -1,28 +1,29 @@
+using Scripts.SoundManager;
 using UnityEngine;
 
 namespace Scripts.InteractableObjects.Realizations
 {
     public class PlayAnimInteractable : MonoBehaviour, IInteractable
     {
+        [SerializeField] private Animator animator;
 
+        [SerializeField] private Sound sound;
 
-        [SerializeField] private Animator _animator;
-
-        [SerializeField] string AnimationName = "ActionAnim";
-        [SerializeField] string AnimationBackName = "ActionAnimBack";
+        [SerializeField] string animationName = "ActionAnim";
+        [SerializeField] string animationBackName = "ActionAnimBack";
         [SerializeField] bool isPingPong = false;
 
-        [SerializeField] bool IsFadeAnimation = false;
-        [SerializeField] string AnimationSpeedVariableName = "Direction";
+        [SerializeField] bool isFadeAnimation = false;
+        [SerializeField] string animationSpeedVariableName = "Direction";
 
-        [SerializeField] float Duration = 0.1f;
+        [SerializeField] float duration = 0.1f;
 
         bool isPlayed = false;
 
 
         private void OnValidate()
         {
-            if (Duration < 0f) Duration = 0f;
+            if (duration < 0f) duration = 0f;
         }
 
         //private void Awake()
@@ -32,21 +33,23 @@ namespace Scripts.InteractableObjects.Realizations
 
         public void DoAction()
         {
-            _animator.StopPlayback();
+            animator.StopPlayback();
+
+            SoundManager.SoundManager.Play(sound, volume: 1);
 
             if (isPingPong)
             {
 
                 if (!isPlayed)
                 {
-                    if (IsFadeAnimation) _animator.CrossFade(AnimationName, Duration);
-                    if (!IsFadeAnimation) _animator.Play(AnimationName, 0);
+                    if (isFadeAnimation) animator.CrossFade(animationName, duration);
+                    if (!isFadeAnimation) animator.Play(animationName, 0);
                 }
 
                 else
                 {
-                    if (IsFadeAnimation) _animator.CrossFade(AnimationBackName, Duration);
-                    if (!IsFadeAnimation) _animator.Play(AnimationBackName, 0);
+                    if (isFadeAnimation) animator.CrossFade(animationBackName, duration);
+                    if (!isFadeAnimation) animator.Play(animationBackName, 0);
                 }
 
                 isPlayed = !isPlayed;
@@ -54,8 +57,8 @@ namespace Scripts.InteractableObjects.Realizations
 
             else
             {
-                if (IsFadeAnimation) _animator.CrossFade(AnimationName, Duration);
-                if (!IsFadeAnimation) _animator.Play(AnimationName, 0);
+                if (isFadeAnimation) animator.CrossFade(animationName, duration);
+                if (!isFadeAnimation) animator.Play(animationName, 0);
             }
         }
     }

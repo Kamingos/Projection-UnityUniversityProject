@@ -235,13 +235,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2453986199577744392}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.1370054, y: 0.009940855, z: -0.0013749865, w: 0.9905195}
+  m_LocalRotation: {x: 0.20192002, y: 0.40128794, z: -0.09117038, w: 0.88875437}
   m_LocalPosition: {x: 0, y: 1.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5630610448070470419}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 25.5, y: 48.6, z: 0}
 --- !u!20 &2563719172835349487
 Camera:
   m_ObjectHideFlags: 0
@@ -275,7 +275,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 5000
-  field of view: 48.2
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 10
   m_Depth: 1
@@ -354,7 +354,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2453986199577744392}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
@@ -489,6 +489,7 @@ GameObject:
   - component: {fileID: 7445012773173332000}
   - component: {fileID: 4725693453119809308}
   - component: {fileID: 3277812575094492105}
+  - component: {fileID: 4391087547214939914}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -608,6 +609,20 @@ MonoBehaviour:
   floorDetector: {fileID: 2828989754842379915}
   animator: {fileID: 2745493348721535387}
   standartFadeDuration: 0.1
+--- !u!114 &4391087547214939914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3896830939011277757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e49dc9564202c4da678fb85eeacfc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSoundSystem
+  input: {fileID: 4725693453119809308}
+  floorDetector: {fileID: 2828989754842379915}
 --- !u!1 &4131145877301547977
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,7 +1071,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7818396870409034640
 Transform:
   m_ObjectHideFlags: 0
@@ -1066,7 +1081,7 @@ Transform:
   m_GameObject: {fileID: 6879251882922498425}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 14.97, z: 0}
+  m_LocalPosition: {x: 0, y: 17.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1104,7 +1119,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 67
   orthographic: 0
