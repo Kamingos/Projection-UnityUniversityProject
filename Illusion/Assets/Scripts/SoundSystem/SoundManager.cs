@@ -13,7 +13,7 @@ namespace Scripts.SoundManager
         [SerializeField] private AudioSource sfxSource;
         [SerializeField] private AudioSource uiSource;
 
-        [SerializeField] private List<SoundElement> soundslist;
+        [SerializeField] private List<SoundElement>? soundslist;
 
 
         private static SoundManager _soundManager;
@@ -56,18 +56,20 @@ namespace Scripts.SoundManager
         /// <returns>получилось ли запустить аудио</returns>
         public static bool Play(Sound sound, float volume = 0.2f, bool isLoop = false)
         {
-            foreach (var soundElement in Instance.soundslist)
-                if (sound == soundElement.Sound)
-                {
-                    if (soundElement.AudioList.Count == 0) return false;
+            if (Instance == null) return false;
 
-                    int randInd = UnityEngine.Random.Range(0, soundElement.AudioList.Count);
+            foreach (SoundElement? soundElement in Instance?.soundslist)
+                if (sound == soundElement?.Sound)
+                {
+                    if (soundElement?.AudioList.Count == 0) return false;
+
+                    int randInd = UnityEngine.Random.Range(0, (int)soundElement?.AudioList.Count);
 
                     // разные типы вызова, потому что для музыки важно прерывание, а для эффектов нет. эффекты могут накладываться друг на друга
-                    switch (soundElement.Type)
+                    switch (soundElement?.Type)
                     {
                         case AudioType.Music:
-                            Instance.musicSource.clip = soundElement.AudioList[randInd];
+                            Instance.musicSource.clip = soundElement?.AudioList[randInd];
 
                             Instance.musicSource.loop = isLoop;
                             Instance.musicSource.volume = volume;
@@ -75,11 +77,11 @@ namespace Scripts.SoundManager
                             break;
                         case AudioType.SFX:
                             Instance.sfxSource.loop = isLoop;
-                            Instance.sfxSource.PlayOneShot(soundElement.AudioList[randInd], volume);
+                            Instance.sfxSource.PlayOneShot(soundElement?.AudioList[randInd], volume);
                             break;
                         case AudioType.UI:
                             Instance.uiSource.loop = isLoop;
-                            Instance.uiSource.PlayOneShot(soundElement.AudioList[randInd], volume);
+                            Instance.uiSource.PlayOneShot(soundElement?.AudioList[randInd], volume);
                             break;
                         default:
                             break;
