@@ -16,6 +16,9 @@ namespace Scripts.SoundManager
         Level1Music,
         BasicJump,
         ClosedDoor,
-        OpenDoor
+        OpenDoor,
+        WinterSnowStorm,
+        MansionAmbient,
+        RobotStepSound,
     }
 }

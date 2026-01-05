@@ -21,6 +21,8 @@ namespace GeneralSctipts
 
                 DontDestroyOnLoad(gameObject);
             }
+            else
+                Destroy(gameObject);
         }
 
         public static void LoadScene(int id)
@@ -35,7 +37,7 @@ namespace GeneralSctipts
             _instance.StartCoroutine(QuitCoroutine());
         }
 
-        private static IEnumerator LoadSceneCoroutine(int id)
+        public static IEnumerator LoadSceneCoroutine(int id)
         {
             AsyncOperation handler =  SceneManager.LoadSceneAsync(id);
             handler.allowSceneActivation = false;

@@ -10,7 +10,8 @@ namespace Scripts.SoundManager
     public class SoundManager : MonoBehaviour
     {
         [SerializeField] private AudioSource musicSource;
-        [SerializeField] private AudioSource sfxSource;
+        [SerializeField] private AudioSource otherSFXSource;
+        [SerializeField] private AudioSource playerSFXSource;
         [SerializeField] private AudioSource uiSource;
 
         [SerializeField] private List<SoundElement>? soundslist;
@@ -19,8 +20,7 @@ namespace Scripts.SoundManager
         private static SoundManager _soundManager;
         public static SoundManager Instance => _soundManager;
 
-
-        private AudioSource tempSource;
+        private static Sound currentSound;
 
         private void Awake()
         {
@@ -33,7 +33,7 @@ namespace Scripts.SoundManager
             else
                 Destroy(gameObject);
 
-            if (Instance.musicSource == null || Instance.sfxSource == null || Instance.uiSource == null)
+            if (Instance.musicSource == null || Instance.playerSFXSource == null || Instance.uiSource == null)
                 throw new Exception("Audio Sources is Null");
         }
 
@@ -61,9 +61,15 @@ namespace Scripts.SoundManager
             foreach (SoundElement? soundElement in Instance?.soundslist)
                 if (sound == soundElement?.Sound)
                 {
-                    if (soundElement?.AudioList.Count == 0) return false;
+                    if (soundElement?.Type == AudioType.Music && sound == currentSound) 
+                        return false;
+
+                    if (soundElement?.AudioList.Count == 0) 
+                        return false;
 
                     int randInd = UnityEngine.Random.Range(0, (int)soundElement?.AudioList.Count);
+
+                    currentSound = sound;
 
                     // разные типы вызова, потому что для музыки важно прерывание, а для эффектов нет. эффекты могут накладываться друг на друга
                     switch (soundElement?.Type)
@@ -75,9 +81,13 @@ namespace Scripts.SoundManager
                             Instance.musicSource.volume = volume;
                             Instance.musicSource.Play();
                             break;
-                        case AudioType.SFX:
-                            Instance.sfxSource.loop = isLoop;
-                            Instance.sfxSource.PlayOneShot(soundElement?.AudioList[randInd], volume);
+                        case AudioType.SFX_Player:
+                            Instance.playerSFXSource.loop = isLoop;
+                            Instance.playerSFXSource.PlayOneShot(soundElement?.AudioList[randInd], volume);
+                            break;
+                        case AudioType.SFX_Other:
+                            Instance.otherSFXSource.loop = isLoop;
+                            Instance.otherSFXSource.PlayOneShot(soundElement?.AudioList[randInd], volume);
                             break;
                         case AudioType.UI:
                             Instance.uiSource.loop = isLoop;
@@ -104,7 +114,7 @@ namespace Scripts.SoundManager
             return audioType switch
             {
                 AudioType.Music => Instance.musicSource,
-                AudioType.SFX => Instance.sfxSource,
+                AudioType.SFX_Other => Instance.playerSFXSource,
                 AudioType.UI => Instance.uiSource,
                 _ => null
             };
