@@ -1,5 +1,4 @@
 using System;
-using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -31,6 +30,7 @@ namespace Scripts.Player.Controls
             _vertMoveAction = inputActions.FindAction("Move");
             _jumpAction = inputActions.FindAction("Jump");
             _btnClick = inputActions.FindAction("Attack");
+
 
             _mouse = Mouse.current;
 

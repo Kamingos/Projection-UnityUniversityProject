@@ -20,5 +20,8 @@ namespace Scripts.SoundManager
         WinterSnowStorm,
         MansionAmbient,
         RobotStepSound,
+        UIClick,
+        VineBoom,
+        UISelect
     }
 }

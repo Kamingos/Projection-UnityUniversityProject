@@ -7,8 +7,11 @@ namespace Scripts
     {
         [SerializeField] private Sound currentSound = Sound.BasicJump; 
         [SerializeField] private float volume = 0.2f; 
-        [SerializeField] private bool isRepeat = false; 
+        [SerializeField] private bool isRepeat = false;
 
-        public void ChangeMusic() => SoundManager.SoundManager.Play(currentSound, volume: volume, isLoop: isRepeat); 
+        [Header("Optional")]
+        [SerializeField] private AudioSource audioSource;
+
+        public void ChangeMusic() => SoundManager.SoundManager.Play(currentSound, volume: volume, isLoop: isRepeat, specialAudioSource: audioSource); 
     }
 }

@@ -20,7 +20,9 @@ namespace Scripts.SoundManager
         private static SoundManager _soundManager;
         public static SoundManager Instance => _soundManager;
 
-        private static Sound currentSound;
+        private static Sound _currentSound;
+
+        private static AudioSource _temp;
 
         private void Awake()
         {
@@ -54,14 +56,14 @@ namespace Scripts.SoundManager
             берётся случайный элемент из списка звуков
         */
         /// <returns>получилось ли запустить аудио</returns>
-        public static bool Play(Sound sound, float volume = 0.2f, bool isLoop = false)
+        public static bool Play(Sound sound, float volume = 0.2f, bool isLoop = false, AudioSource specialAudioSource = null)
         {
             if (Instance == null) return false;
 
             foreach (SoundElement? soundElement in Instance?.soundslist)
                 if (sound == soundElement?.Sound)
                 {
-                    if (soundElement?.Type == AudioType.Music && sound == currentSound) 
+                    if (soundElement?.Type == AudioType.Music && sound == _currentSound) 
                         return false;
 
                     if (soundElement?.AudioList.Count == 0) 
@@ -69,25 +71,33 @@ namespace Scripts.SoundManager
 
                     int randInd = UnityEngine.Random.Range(0, (int)soundElement?.AudioList.Count);
 
-                    currentSound = sound;
+                    _currentSound = sound;
 
                     // разные типы вызова, потому что для музыки важно прерывание, а для эффектов нет. эффекты могут накладываться друг на друга
                     switch (soundElement?.Type)
                     {
                         case AudioType.Music:
-                            Instance.musicSource.clip = soundElement?.AudioList[randInd];
 
-                            Instance.musicSource.loop = isLoop;
-                            Instance.musicSource.volume = volume;
-                            Instance.musicSource.Play();
+                            _temp = (specialAudioSource == null) ? Instance.musicSource: specialAudioSource;
+
+                            _temp.clip = soundElement?.AudioList[randInd];
+
+                            _temp.loop = isLoop;
+                            _temp.volume = volume;
+
+                            _temp.Play();
                             break;
                         case AudioType.SFX_Player:
-                            Instance.playerSFXSource.loop = isLoop;
-                            Instance.playerSFXSource.PlayOneShot(soundElement?.AudioList[randInd], volume);
+                            _temp = (specialAudioSource == null) ? Instance.playerSFXSource : specialAudioSource;
+
+                            _temp.loop = isLoop;
+                            _temp.PlayOneShot(soundElement?.AudioList[randInd], volume);
                             break;
                         case AudioType.SFX_Other:
-                            Instance.otherSFXSource.loop = isLoop;
-                            Instance.otherSFXSource.PlayOneShot(soundElement?.AudioList[randInd], volume);
+                            _temp = (specialAudioSource == null) ? Instance.otherSFXSource : specialAudioSource;
+
+                            _temp.loop = isLoop;
+                            _temp.PlayOneShot(soundElement?.AudioList[randInd], volume);
                             break;
                         case AudioType.UI:
                             Instance.uiSource.loop = isLoop;

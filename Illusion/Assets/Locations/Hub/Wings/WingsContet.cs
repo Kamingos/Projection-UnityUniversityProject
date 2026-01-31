@@ -61,3 +61,31 @@ public class WingsDataContent : WingscontentAbstract
     }
 }
 
+[Serializable]
+public class WingsEmojiContent : WingscontentAbstract
+{
+    private Coroutine coroutine;
+
+    public override void Launch()
+    {
+        _header.text = "Привет!";
+
+        coroutine = _obj.StartCoroutine(cycle());
+    }
+
+    IEnumerator cycle()
+    {
+        WaitForSeconds wfs = new WaitForSeconds(1.5f);
+
+        while (true)
+        {
+            _text.text = "0_0";
+
+            yield return wfs;
+            
+            _text.text = "*_*";
+
+            yield return wfs;
+        }
+    }
+}

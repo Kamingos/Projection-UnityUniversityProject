@@ -107,6 +107,18 @@ MonoBehaviour:
     type: 2
     audioList:
     - {fileID: 8300000, guid: 36468101e529a4c46b30dfa31a3690e9, type: 3}
+  - sound: 16
+    type: 3
+    audioList:
+    - {fileID: 8300000, guid: 17ce1ed89eed2644eb16a4a348c70fbc, type: 3}
+  - sound: 15
+    type: 3
+    audioList:
+    - {fileID: 8300000, guid: cc97e19897f360f419ca602a5b29b87f, type: 3}
+  - sound: 17
+    type: 3
+    audioList:
+    - {fileID: 8300000, guid: 674e1359e542afd448a725ce93f7191e, type: 3}
 --- !u!82 &1742958336285696842
 AudioSource:
   m_ObjectHideFlags: 0

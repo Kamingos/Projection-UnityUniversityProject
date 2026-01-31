@@ -5,10 +5,15 @@ namespace Scripts.Level_1
 {
     public class Bootstrap_Level_1 : MonoBehaviour
     {
-        [SerializeField] private GameObject player;
+        [SerializeField] private EnemySpawner spawner;
 
-        private void Awake()
+        [SerializeField] private EnemysController enemysController;
+
+        private void Start()
         {
+            spawner.CreateEnemy();
+            spawner.CreateEnemy();
+
             SoundManager.SoundManager.Play(Sound.WinterSnowStorm, isLoop: true);
         }
     }
