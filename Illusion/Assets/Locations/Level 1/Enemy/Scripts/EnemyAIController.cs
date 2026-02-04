@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using UnityEngine;
 
 namespace Scripts.Level_1.Enemy
@@ -10,7 +9,7 @@ namespace Scripts.Level_1.Enemy
         Disabled,
         Walking,
         Waring,
-        Running,
+        Chase,
         Murdering
     }
 
@@ -24,13 +23,13 @@ namespace Scripts.Level_1.Enemy
 
         private Coroutine _currentCoroutine;
 
-        private List<Transform> enemyPointPositions; 
+        private List<Transform> _enemyPointPositions; 
 
         public void Init(Transform playerTransform, List<Transform> enemyPointPositions)
         {
             _playerTransform = playerTransform;
 
-            this.enemyPointPositions = enemyPointPositions;
+            this._enemyPointPositions = enemyPointPositions;
         }
 
         public void TurnOn()
@@ -53,7 +52,7 @@ namespace Scripts.Level_1.Enemy
                 EnemyState.Disabled => DisabledCoroutine(),
                 EnemyState.Walking => WalkingCoroutine(),
                 EnemyState.Waring => WaringCoroutine(),
-                EnemyState.Running => RunningCoroutine(),
+                EnemyState.Chase => ChaseCoroutine(),
                 EnemyState.Murdering => MurderingCoroutine(),
 
                 _ => DisabledCoroutine()
@@ -71,7 +70,7 @@ namespace Scripts.Level_1.Enemy
         {
             while (true)
             {
-                Vector3 targetPos = enemyPointPositions[Random.Range(0, enemyPointPositions.Count)].position;
+                Vector3 targetPos = _enemyPointPositions[Random.Range(0, _enemyPointPositions.Count)].position;
 
                 _movementController.SetDestination(targetPos);
 
@@ -86,7 +85,7 @@ namespace Scripts.Level_1.Enemy
             yield return null;
         }
 
-        IEnumerator RunningCoroutine()
+        IEnumerator ChaseCoroutine()
         {
             yield return null;
         }
@@ -97,3 +96,4 @@ namespace Scripts.Level_1.Enemy
         }
     }
 }
+

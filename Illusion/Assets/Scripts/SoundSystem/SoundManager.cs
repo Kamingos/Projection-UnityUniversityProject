@@ -17,12 +17,12 @@ namespace Scripts.SoundManager
         [SerializeField] private List<SoundElement>? soundslist;
 
 
-        private static SoundManager _soundManager;
-        public static SoundManager Instance => _soundManager;
-
         private static Sound _currentSound;
 
         private static AudioSource _temp;
+
+        private static SoundManager _soundManager;
+        public static SoundManager Instance => _soundManager;
 
         private void Awake()
         {
@@ -36,7 +36,7 @@ namespace Scripts.SoundManager
                 Destroy(gameObject);
 
             if (Instance.musicSource == null || Instance.playerSFXSource == null || Instance.uiSource == null)
-                throw new Exception("Audio Sources is Null");
+                throw new Exception("Audio Sources is null");
         }
 
 

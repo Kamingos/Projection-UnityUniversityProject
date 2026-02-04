@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 
 namespace Scripts.Menu
 {
-
     public class MenuViewController : MonoBehaviour
     {
         [SerializeField] private MenuView menuView;
@@ -15,8 +14,12 @@ namespace Scripts.Menu
 
         private MenuState _currentState = MenuState.Closed;
 
+        bool isQuied = false;
+
         private void Awake()
         {
+            isQuied = false;
+
             _menuBtn = inputActions.FindAction("MenuBtn");
 
             _menuBtn.started += (_) =>
@@ -45,9 +48,13 @@ namespace Scripts.Menu
 
             menuView.OnQuitBtn += () =>
             {
+                if (isQuied) return;
+
                 SoundManager.SoundManager.Play(SoundManager.Sound.UIClick);
 
                 SceneController.LoadScene(0);
+
+                isQuied = true;
             };
 
             menuView.OnCrossBtn += () =>

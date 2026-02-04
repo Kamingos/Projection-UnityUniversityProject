@@ -91781,9 +91781,19 @@ MonoBehaviour:
   menuTextObj: {fileID: 0}
   menuTextTMP: {fileID: 0}
   menuPanel: {fileID: 0}
+  continueGifObj: {fileID: 0}
+  settingsGifObj: {fileID: 0}
+  quitGifObj: {fileID: 0}
   continueBtn: {fileID: 0}
   settingsBtn: {fileID: 0}
   quitBtn: {fileID: 0}
+  crossBtn: {fileID: 0}
+  minusBtn: {fileID: 0}
+  conttinueBtnListener: {fileID: 0}
+  settingsBtnListener: {fileID: 0}
+  quitBtnListener: {fileID: 0}
+  crossBtnListener: {fileID: 0}
+  minusBtnListener: {fileID: 0}
   scaleDeltaTime: 0
   xKaef: 0
   yKaef: 0
@@ -219904,7 +219914,7 @@ PrefabInstance:
     - target: {fileID: 7155595237862252394, guid: 9f2e47105611c5a4381d89f4733cdabd, type: 3}
       propertyPath: OnPlayerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2992030883939288783}
     - target: {fileID: 7155595237862252394, guid: 9f2e47105611c5a4381d89f4733cdabd, type: 3}
       propertyPath: OnPlayerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -294780,7 +294790,7 @@ PrefabInstance:
     - target: {fileID: 7155595237862252394, guid: 9f2e47105611c5a4381d89f4733cdabd, type: 3}
       propertyPath: OnPlayerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2992030883939288783}
     - target: {fileID: 7155595237862252394, guid: 9f2e47105611c5a4381d89f4733cdabd, type: 3}
       propertyPath: OnPlayerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -377397,7 +377407,7 @@ PrefabInstance:
     - target: {fileID: 7155595237862252394, guid: 9f2e47105611c5a4381d89f4733cdabd, type: 3}
       propertyPath: OnPlayerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2992030883939288783}
     - target: {fileID: 7155595237862252394, guid: 9f2e47105611c5a4381d89f4733cdabd, type: 3}
       propertyPath: OnPlayerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -414512,6 +414522,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 880213485142723575, guid: caa57e57c80179748b4a4159fa11b41a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1078327282329504382, guid: caa57e57c80179748b4a4159fa11b41a, type: 3}
       propertyPath: m_Name
       value: Additive UI Camera
@@ -414560,6 +414574,10 @@ PrefabInstance:
       propertyPath: inputActions
       value: 
       objectReference: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    - target: {fileID: 6423604678968841401, guid: caa57e57c80179748b4a4159fa11b41a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6927378926847743977, guid: caa57e57c80179748b4a4159fa11b41a, type: 3}
       propertyPath: menuPanel
       value: 
@@ -414600,6 +414618,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2001382397}
   m_SourcePrefab: {fileID: 100100000, guid: caa57e57c80179748b4a4159fa11b41a, type: 3}
+--- !u!114 &2992030883939288783 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5605960099019424562, guid: caa57e57c80179748b4a4159fa11b41a, type: 3}
+  m_PrefabInstance: {fileID: 2992030883939288782}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a34e77b1949f937478a6ae4e4dfcbb42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogSystem
 --- !u!1001 &3459007907874152364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -414768,7 +414797,7 @@ PrefabInstance:
     - target: {fileID: 7155595237862252394, guid: 9f2e47105611c5a4381d89f4733cdabd, type: 3}
       propertyPath: OnPlayerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2992030883939288783}
     - target: {fileID: 7155595237862252394, guid: 9f2e47105611c5a4381d89f4733cdabd, type: 3}
       propertyPath: OnPlayerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -415166,9 +415195,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 410087041}
+  - {fileID: 2992030883939288782}
   - {fileID: 466264878}
   - {fileID: 2127980868}
   - {fileID: 2484423146960022631}
   - {fileID: 2124715140}
   - {fileID: 998921937}
-  - {fileID: 2992030883939288782}
